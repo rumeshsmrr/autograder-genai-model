@@ -1,0 +1,101 @@
+reference_code,answer_code,ground_truth_score
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
+"public class Ref { public static void main(String[] args) { System.out.println(""Hello World""); } }","public class Ans { public static void main(String[] args) { System.out.println(""Hello World""); } }",1
+"public class Ref { public int add(int a, int b) { return a + b; } }","public class Ans { public int add(int x, int y) { return x + y; } }",1
+public class Ref { public double calculateArea(double radius) { return Math.PI * radius * radius; } },public class Ans { public double calculateArea(double r) { return Math.PI * r * r; } },1
+"public class Ref { public String greet(String name) { return ""Hello "" + name; } }","public class Ans { public String greet(String name) { return ""Hi "" + name; } }",0
+public class Ref { public boolean isEven(int number) { return number % 2 == 0; } },public class Ans { public boolean isEven(int num) { return num % 2 == 0; } },1
