@@ -151,7 +151,7 @@ def compare_outputs(ref_output, ans_output):
     return (matching_lines / total_lines) * 100 if total_lines > 0 else 0.0
 
 def parse_constructors_and_methods(code):
-    """Static analysis for method/constructor detection"""
+    """Static analysis for method/constructor detection. Returns constructors and methods."""
     try:
         tree = javalang.parse.parse(code)
         constructors = []
@@ -163,47 +163,68 @@ def parse_constructors_and_methods(code):
                 constructors.append({
                     "name": node.name,
                     "params": params,
-                    "is_default": len(params) == 0
+                    "is_default": len(params) == 0,
+                    "node": node
                 })
             elif isinstance(node, javalang.tree.MethodDeclaration):
                 params = [f"{p.type.name} {p.name}" for p in node.parameters]
                 methods.append({
                     "name": node.name,
                     "params": params,
-                    "return_type": node.return_type.name if node.return_type else "void"
+                    "return_type": node.return_type.name if node.return_type else "void",
+                    "node": node
                 })
-                
         return constructors, methods
     except Exception as e:
         return [], []
 
-def evaluate_structural_criteria(code, criteria):
-    """Evaluate method/constructor presence using static analysis"""
-    constructors, methods = parse_constructors_and_methods(code)
+def extract_method_body(code, method_name):
+    """
+    Attempts to extract the method body of the given method name from the Java code.
+    This is a simplified extraction using the node's string representation.
+    """
+    try:
+        _, methods = parse_constructors_and_methods(code)
+        for method in methods:
+            if method["name"].lower() == method_name.lower():
+                # Return the string representation of the method node as a proxy for its implementation.
+                return str(method["node"])
+    except Exception as e:
+        return ""
+    return ""
+
+def evaluate_method_correctness(reference_code, answer_code, method_name, threshold=80):
+    """
+    Evaluates whether the method implementation in answer_code is correct by comparing it
+    to the reference_code. Returns 100 if the similarity is above the threshold, otherwise returns the similarity percentage.
+    """
+    ref_body = extract_method_body(reference_code, method_name)
+    ans_body = extract_method_body(answer_code, method_name)
+    if not ref_body or not ans_body:
+        return 0  # If either method is missing, return 0
+    # Use the existing similarity function on the method bodies
+    _, _, similarity = evaluate_code_similarity(ref_body, ans_body)
+    return 100 if similarity >= threshold else similarity
+
+def evaluate_structural_criteria(reference_code, answer_code, criteria):
+    """Evaluate method/constructor correctness using static analysis and similarity checks."""
     results = {}
     
     for criterion in criteria:
         criterion_lower = criterion.lower()
         
-        # Constructor checks
         if "constructor" in criterion_lower:
+            # For constructors, check for presence using parse_constructors_and_methods
+            constructors, _ = parse_constructors_and_methods(answer_code)
             if "default" in criterion_lower:
-                has_default = any(ctor["is_default"] for ctor in constructors)
-                results[criterion] = 100 if has_default else 0
+                results[criterion] = 100 if any(ctor["is_default"] for ctor in constructors) else 0
             elif "overloaded" in criterion_lower:
-                has_overloaded = len(constructors) > 1
-                results[criterion] = 100 if has_overloaded else 0
-                
-        # Method checks
+                results[criterion] = 100 if len(constructors) > 1 else 0
         elif "method" in criterion_lower:
-            # Extract method name before parentheses and normalize
-            method_spec = criterion.split('(')[0].strip().lower()
-            matching_methods = [
-                m for m in methods 
-                if m['name'].lower() == method_spec
-            ]
-            results[criterion] = 100 if matching_methods else 0
-            
+            # For methods, evaluate correctness by comparing the method bodies.
+            # Extract the method name from criterion (e.g., "Read() method" -> "read")
+            method_name = criterion.split('(')[0].strip()
+            results[criterion] = evaluate_method_correctness(reference_code, answer_code, method_name)
     return results
 
 def evaluate_with_codet5(code, criteria):
@@ -227,7 +248,6 @@ def evaluate_with_codet5(code, criteria):
             results[criterion] = 100 if "yes" in response.lower() else 0
         except Exception as e:
             results[criterion] = 0
-            
     return results
 
 def process_rubric_weights(rubric):
@@ -244,7 +264,7 @@ def evaluate_code(reference_code, answer_code, input_data="", rubric={}):
     # Process rubric weights
     rubric_weights = process_rubric_weights(rubric)
     
-    # Phase 1: Code similarity check
+    # Phase 1: Code similarity check (overall)
     _, _, code_sim = evaluate_code_similarity(reference_code, answer_code)
     if code_sim == 100:
         valid_criteria = {k: v for k, v in rubric_weights.items() if v > 0}
@@ -266,8 +286,9 @@ def evaluate_code(reference_code, answer_code, input_data="", rubric={}):
     output_match = compare_outputs(ref_output, ans_output) * (rubric_weights.get("output_match", 0) / 100)
 
     # Phase 4: Dynamic criteria evaluation
+    # Evaluate criteria that are not fixed; now include method correctness comparison
     dynamic_criteria = [k for k in rubric_weights if k not in FIXED_CRITERIA]
-    structural_results = evaluate_structural_criteria(answer_code, dynamic_criteria)
+    structural_results = evaluate_structural_criteria(reference_code, answer_code, dynamic_criteria)
     remaining_criteria = [c for c in dynamic_criteria if c not in structural_results]
     llm_results = evaluate_with_codet5(answer_code, remaining_criteria)
     
@@ -289,4 +310,3 @@ def evaluate_code(reference_code, answer_code, input_data="", rubric={}):
         "code_similarity_percentage": round(code_sim, 2),
         "syntax_errors": syntax_errors
     }
-
