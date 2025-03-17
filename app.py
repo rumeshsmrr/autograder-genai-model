@@ -3,6 +3,11 @@ from model import evaluate_code
 
 app = Flask(__name__)
 
+# Health check endpoint
+@app.route("/", methods=["GET"])
+def health_check():
+    return jsonify({"status": "✅ Server is running!", "message": "Flask API is live!"})
+
 @app.route("/evaluate", methods=["POST"])
 def handle_evaluation():
     try:
