@@ -1,12 +1,12 @@
-name: Build and Deploy Docker Image
+name: Build and Deploy to AWS ECS
 
 on:
   push:
     branches:
-      - main # or whichever branch you want to trigger on
+      - main # Runs when code is pushed to main branch
 
 jobs:
-  build-and-push:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +25,19 @@ jobs:
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v4
         with:
-          context: . # Adjust if your Dockerfile is in a subdirectory
-          file: Dockerfile # Adjust path if necessary
+          context: .
+          file: Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/model:latest
+
+      - name: Configure AWS CLI
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set region eu-north-1  # Change this to your AWS region
+
+      - name: Force ECS Deployment with New Image
+        run: |
+          aws ecs update-service --cluster programingAutograderAi \
+            --service programingAI-service \
+            --force-new-deployment
