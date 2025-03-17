@@ -7,18 +7,27 @@ app = Flask(__name__)
 def handle_evaluation():
     try:
         data = request.get_json()
+        print("🔹 Received request:", data)  # Print the incoming request data
+
         result = evaluate_code(
             data["reference_code"],
             data["answer_code"],
             data.get("input_data", ""),
             data.get("rubric", {})
         )
+
+        print("✅ Evaluation completed. Sending response:", result)  # Log response
         return jsonify(result)
     except KeyError as e:
-        return jsonify({"error": f"Missing required field: {str(e)}"}), 400
+        error_msg = f"❌ Missing required field: {str(e)}"
+        print(error_msg)
+        return jsonify({"error": error_msg}), 400
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        error_msg = f"❌ Error: {str(e)}"
+        print(error_msg)
+        return jsonify({"error": error_msg}), 500
 
 if __name__ == "__main__":
-    # Using Flask's built-in server for development
+    print("🚀 Flask App is starting...")  # Log when the app starts
+    print("🌍 Running on http://0.0.0.0:5000")
     app.run(host='0.0.0.0', port=5000, debug=True)

@@ -39,5 +39,5 @@ jobs:
       - name: Force ECS Deployment with New Image
         run: |
           aws ecs update-service --cluster programingAutograderAi \
-            --service programingAI-service \
+            --service programingAiservice \
             --force-new-deployment
