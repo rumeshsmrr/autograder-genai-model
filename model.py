@@ -4,14 +4,18 @@ from transformers import AutoTokenizer, AutoModel, AutoModelForSeq2SeqLM
 import javalang
 import json
 
+from transformers import AutoModel, AutoModelForSeq2SeqLM, AutoTokenizer
+
 class CodeEvaluator:
     def __init__(self):
         # Load CodeBERT for embedding extraction (for similarity comparisons)
         self.codebert_tokenizer = AutoTokenizer.from_pretrained("microsoft/codebert-base")
         self.codebert_model = AutoModel.from_pretrained("microsoft/codebert-base")
+
         # Load CodeT5 for feedback generation and fallback extraction
         self.codet5_tokenizer = AutoTokenizer.from_pretrained("Salesforce/codet5-base")
         self.codet5_model = AutoModelForSeq2SeqLM.from_pretrained("Salesforce/codet5-base")
+
 
     def extract_method_code(self, code, node):
         """
