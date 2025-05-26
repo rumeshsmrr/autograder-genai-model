@@ -19,7 +19,7 @@ def health_check():
     logging.info("Health check ping received.")
     return jsonify({
         "status": "✅ Server is running!",
-        "message": "Flask API is live!"
+        "message": "Flask API is live on!"
     })
 
 # ✅ Evaluate Code

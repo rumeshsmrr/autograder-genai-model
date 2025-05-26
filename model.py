@@ -5,7 +5,8 @@ class CodeEvaluator:
     def __init__(self):
         # Load CodeBERT for evaluation and set it to return hidden states
         self.codebert_tokenizer = AutoTokenizer.from_pretrained("microsoft/codebert-base")
-        self.codebert_model = AutoModelForSequenceClassification.from_pretrained("microsoft/codebert-base")
+        AutoModelForSequenceClassification.from_pretrained("microsoft/codebert-base", use_safetensors=True)
+
         self.codebert_model.config.output_hidden_states = True
 
         # Load CodeT5 for feedback generation
